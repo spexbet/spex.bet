@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spex: free tools to track your Kalshi sports bets</title>
+<meta name="description" content="Spex is a family of free, open-source apps for watching your open Kalshi sports positions: a Mac menu bar app now, a self-hosted dashboard next. Read-only, no orders placed. Not affiliated with Kalshi.">
+<link rel="canonical" href="https://spex.bet/">
+<link rel="icon" type="image/png" href="/assets/app-icon.png">
+<link rel="apple-touch-icon" href="/assets/app-icon.png">
+<meta name="theme-color" content="#1E5EFF">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spex">
+<meta property="og:title" content="Spex: free tools to track your Kalshi sports bets">
+<meta property="og:description" content="Free, open-source tools for watching your open Kalshi sports positions. Spex Glance for Mac is out now.">
+<meta property="og:url" content="https://spex.bet/">
+<meta property="og:image" content="https://spex.bet/assets/og-spex.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spex: free tools to track your Kalshi sports bets">
+<meta name="twitter:description" content="Free, open-source tools for watching your open Kalshi sports positions. Spex Glance for Mac is out now.">
+<meta name="twitter:image" content="https://spex.bet/assets/og-spex.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Spex",
+  "url": "https://spex.bet/",
+  "description": "Free, open-source tools for keeping tabs on open Kalshi sports positions.",
+  "author": { "@type": "Person", "name": "Spex", "url": "https://spex.bet" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is Spex affiliated with Kalshi?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Spex is an independent open-source project. It isn't affiliated with, endorsed by, or supported by Kalshi. Kalshi is their trademark." } },
+    { "@type": "Question", "name": "Does Spex work with Polymarket, FanDuel, DraftKings, or other sportsbooks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Every Spex app reads from Kalshi's API and nothing else. Other prediction markets and sportsbooks have their own APIs or none at all, and there's no plan to add them." } },
+    { "@type": "Question", "name": "Can any Spex app place a bet for me?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. They run on read-only Kalshi API keys and have no order code. They show you what you hold and what it's worth." } },
+    { "@type": "Question", "name": "Why is it called Spex?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A haruspex was a Roman priest who predicted the future by reading the entrails of a sacrificed animal. That's roughly what checking your Kalshi portfolio at 11pm feels like. Spex is the tail end of that word, and also specs, as in the glasses in the logo. Less mess, same anxiety." } }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+@media (max-width:860px){.apps{grid-template-columns:1fr}}
+.app{display:flex;flex-direction:column;gap:10px}
+.app .status{font-family:var(--display);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}
+.app .status.live{color:var(--up)} .app .status.soon{color:var(--ember)} .app .status.later{color:var(--muted)}
+.app h3{font-size:1.35rem;margin:0}
+.app p{margin:0;flex:1}
+.app .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.app img{width:56px;height:56px;border-radius:14px;box-shadow:0 1px 3px rgba(11,30,68,.25)}
+.hero-brand{padding-top:56px;padding-bottom:24px}
+.support h3{margin:0 0 6px}
+.support p{margin:0 0 16px;font-size:.95rem;max-width:70ch}
+.btn.kofi{background:#FF5E5B;color:#fff}
+.hero-brand h1{max-width:14ch}
+.hero-brand h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <nav aria-label="Primary">
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="" width="36" height="36">Spex</a>
+    <ul>
+      <li><a href="/glance/">Spex Glance</a></li>
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="https://spex.bet">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+<section class="wrap hero-brand">
+  <div class="eyebrow">Free · Open source · Not affiliated with Kalshi</div>
+  <h1>Keep tabs on your Kalshi sports positions.</h1>
+  <p class="lede">Spex is a small set of tools for people who have money on tonight's games and want to see how it's going without living in a browser tab. Read-only, your own API key, no orders placed. Everything here is free and MIT licensed.</p>
+</section>
+
+<section id="apps" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Apps</div>
+    <h2>One shipped. More on the bench.</h2>
+    <div class="apps">
+      <div class="card app">
+        <img src="/assets/app-icon.png" alt="" width="56" height="56">
+        <span class="status live">Available now</span>
+        <h3>Spex Glance</h3>
+        <p class="muted">A free, open-source Mac app that shows your open sports positions in one window and a live P&amp;L number in the menu bar. Think of the Stocks app, but for Kalshi. MIT licensed, source on GitHub.</p>
+        <div class="row">
+          <a class="btn primary" href="/glance/">Learn more</a>
+          <a class="btn ghost" href="https://github.com/spexbet/spex-glance/releases/latest">Download</a>
+        </div>
+        <span class="fineprint"><span data-version>v0.2.1</span> · macOS 15+ · Apple silicon · Free · MIT</span>
+      </div>
+      <div class="card app">
+        <img src="/assets/app-icon.png" alt="" width="56" height="56">
+        <span class="status soon">In the works</span>
+        <h3>Spex Board</h3>
+        <p class="muted">A self-hosted web dashboard for your homelab. Watches Kalshi sports markets around the clock, sends alerts, and can run an AI research pass on a matchup with your own key. Ships in a Docker container.</p>
+        <div class="row"><span class="fineprint">Source opens when it's ready for other people's servers.</span></div>
+      </div>
+      <div class="card app">
+        <img src="/assets/app-icon.png" alt="" width="56" height="56">
+        <span class="status later">Later</span>
+        <h3>Spex for iPhone</h3>
+        <p class="muted">Same idea, smaller screen. Not started. It'll happen once the Mac app has had a few releases and some feedback.</p>
+        <div class="row"><span class="fineprint">No date. No waitlist. Check back.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The rules, for every Spex app</div>
+    <div class="two">
+      <div class="card"><h3>Read-only, always</h3><p class="muted">Each app runs on a read-only Kalshi API key and has no order code. Nothing under the Spex name places, amends, or cancels a bet.</p></div>
+      <div class="card"><h3>Your data stays yours</h3><p class="muted">Apps talk straight to Kalshi. No Spex server in the middle, no account to create, nothing about your positions leaves your machine.</p></div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Common questions</div>
+    <details open><summary>Is Spex affiliated with Kalshi?</summary><p>No. Spex is an independent open-source project. It isn't affiliated with, endorsed by, or supported by Kalshi. "Kalshi" is their trademark.</p></details>
+    <details><summary>Does Spex work with Polymarket, FanDuel, DraftKings, or other sportsbooks?</summary><p>No. Every Spex app reads from Kalshi's API and nothing else. Other prediction markets and sportsbooks have their own APIs or none at all, and there's no plan to add them.</p></details>
+    <details><summary>Can any Spex app place a bet for me?</summary><p>No. They run on read-only Kalshi API keys and have no order code. They show you what you hold and what it's worth.</p></details>
+    <details><summary>Why is it called Spex?</summary><p>A haruspex was a Roman priest who predicted the future by reading the entrails of a sacrificed animal. That's roughly what checking your Kalshi portfolio at 11pm feels like. Spex is the tail end of that word, and also specs, as in the glasses in the logo. Less mess, same anxiety.</p></details>
+  </div>
+</section>
+
+<section class="alt" style="padding:36px 0">
+  <div class="wrap support">
+    <h3>Want to help keep this project running?</h3>
+    <p class="muted">Everything under the Spex name is free and stays that way. Tips cover the Apple developer account that keeps the Mac app signed and notarized.</p>
+    <a class="btn kofi" href="https://ko-fi.com/U4B527UPTU">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>
+      Support me on Ko-fi
+    </a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">
+      <strong>Disclaimer.</strong> Spex is not affiliated with or endorsed by Kalshi. It's informational only. Nothing here is trading advice. Prices and settlements are relayed from Kalshi as-is and can lag or be wrong. Confirm on Kalshi before acting. Provided under the MIT license, as-is, without warranty of any kind.
+      <div style="margin-top:8px">If gambling is a problem for you or someone you know, call or text <span class="help">1-800-GAMBLER</span>.</div>
+    </div>
+    <div class="cols">
+      <div>
+        <h4>Spex</h4>
+        <p>Tools for keeping tabs on open sports positions on Kalshi. Made by <a href="https://spex.bet">Spex</a>. Written with Claude.</p>
+      </div>
+      <div>
+        <h4>Apps</h4>
+        <ul>
+          <li><a href="/glance/">Spex Glance for Mac</a></li>
+          <li><a href="https://github.com/spexbet/spex-glance">Spex Glance source</a></li>
+          <li><a href="https://github.com/spexbet/spex-glance/issues">Issues</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li>MIT licensed. Bundles Space Grotesk (SIL OFL 1.1)</li>
+          <li><a href="https://ko-fi.com/U4B527UPTU">Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
