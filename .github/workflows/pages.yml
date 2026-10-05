@@ -39,24 +39,28 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag="$(gh release view --repo spexbet/spex-glance --json tagName -q .tagName)"
+          tag="$(gh release view --repo spexbet/spex-glance --json tagName -q .tagName 2>/dev/null || true)"
           ver="${tag#v}"
           echo "tag=$tag"  >> "$GITHUB_OUTPUT"
           echo "ver=$ver"  >> "$GITHUB_OUTPUT"
-          echo "Latest release: $tag"
+          if [ -n "$ver" ]; then echo "Latest release: $tag"; else echo "No spex-glance release yet — keeping committed version placeholder."; fi
 
       - name: Stamp the version into the pages
         env:
           VER: ${{ steps.rel.outputs.ver }}
         run: |
           set -e
-          # Visible version markers: <span data-version>…</span>
-          sed -i -E "s|(<span data-version>)[^<]*(</span>)|\1v${VER}\2|g" index.html glance/index.html
-          # Structured data on the Glance page
-          sed -i -E "s|\"softwareVersion\": \"[^\"]*\"|\"softwareVersion\": \"${VER}\"|" glance/index.html
-          # Sitemap lastmod for the Glance page = today
-          sed -i -E "s|(<loc>https://spex.bet/glance/</loc><lastmod>)[^<]*(</lastmod>)|\1$(date -u +%F)\2|" sitemap.xml
-          grep -n "data-version" index.html glance/index.html
+          if [ -n "$VER" ]; then
+            # Visible version markers: <span data-version>…</span>
+            sed -i -E "s|(<span data-version>)[^<]*(</span>)|\1v${VER}\2|g" index.html glance/index.html
+            # Structured data on the Glance page
+            sed -i -E "s|\"softwareVersion\": \"[^\"]*\"|\"softwareVersion\": \"${VER}\"|" glance/index.html
+            # Sitemap lastmod for the Glance page = today
+            sed -i -E "s|(<loc>https://spex.bet/glance/</loc><lastmod>)[^<]*(</lastmod>)|\1$(date -u +%F)\2|" sitemap.xml
+            grep -n "data-version" index.html glance/index.html || true
+          else
+            echo "No spex-glance release yet — leaving committed version placeholder."
+          fi
           rm -rf .github
 
       - name: Publish the canonical Glance appcast (single source — spexbet/spex-glance)
