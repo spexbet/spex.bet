@@ -3,18 +3,14 @@
 
 :root{
   --paper:#F6F1E4; --cobalt:#1E5EFF; --cream:#FFF4D6; --ember:#FF8A3D; --navy:#0B1E44;
-  --bg:#FFFFFF; --alt:#F7F7F8; --fg:#14213D; --muted:#5B6478; --card:var(--paper); --line:rgba(11,30,68,.13);
+  /* One look, the app icon's: paper ground, cobalt, cream. No dark theme. */
+  --bg:var(--paper); --alt:#EFE7D3; --fg:#14213D; --muted:#5B6478; --card:#FFFCF4; --line:rgba(11,30,68,.14);
   --up:#1B8A5A;
   --display:"Space Grotesk",ui-sans-serif,system-ui,sans-serif;
   --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,system-ui,sans-serif;
   --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:var(--navy); --alt:#10244F; --fg:#F1EDE1; --muted:#A9B3C9; --card:#12305F; --line:rgba(255,244,214,.15); --up:#4FD38F;
-  }
-}
-:root[data-theme="dark"]{ --bg:var(--navy); --alt:#10244F; --fg:#F1EDE1; --muted:#A9B3C9; --card:#12305F; --line:rgba(255,244,214,.15); --up:#4FD38F; }
+html{color-scheme:light}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -111,3 +107,11 @@ footer li{margin:4px 0}
 .brew button{font:inherit;font-family:var(--display);font-weight:500;font-size:.8rem;border:0;border-radius:999px;padding:6px 12px;background:var(--cobalt);color:var(--cream);cursor:pointer;white-space:nowrap}
 .brew button:active{transform:translateY(1px)}
 @media (max-width:520px){.brew{display:flex;flex-wrap:wrap;width:100%;box-sizing:border-box}.brew code{flex:1 1 100%;order:3;padding-top:4px}.brew button{margin-left:auto}}
+
+/* Features as a ruled list, like a box score: no icon tiles. */
+.ledger{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px;margin-top:22px}
+@media (max-width:760px){.ledger{grid-template-columns:1fr}}
+.ledger>div{border-top:2px solid var(--fg);padding:16px 0 26px}
+.ledger h3{font-size:1.2rem;margin:0 0 .4em}
+.ledger h3 .k{font-family:var(--mono);font-size:.78rem;font-weight:400;color:var(--cobalt);margin-right:10px;letter-spacing:0}
+.ledger p{margin:0;color:var(--muted)}

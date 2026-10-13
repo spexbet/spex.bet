@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" href="/assets/app-icon.png">
 <link rel="apple-touch-icon" href="/assets/app-icon.png">
 <meta name="theme-color" content="#1E5EFF">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spex">
 <meta property="og:title" content="Spex Glance for iPhone and Apple Watch (private testing)">
@@ -59,6 +59,10 @@
 .watches figure{margin:0}
 .watches figcaption{font-size:.85rem;color:var(--muted);text-align:center;margin-top:16px}
 .ul{margin:12px 0 0;padding-left:1.1em}
+.widgets{display:grid;grid-template-columns:1fr;gap:20px;justify-items:center;padding:28px 22px;border-radius:28px;background:var(--navy)}
+.widgets img{display:block;box-shadow:0 18px 36px -18px rgba(11,30,68,.55)}
+.widgets .wm{width:100%;max-width:400px;border-radius:6.6% / 14.2%;clip-path:inset(1px round 6.6% / 14.2%)}
+.widgets .ws{width:52%;max-width:200px;border-radius:14%;clip-path:inset(1px round 14%)}
 .ul li{margin:6px 0}
 </style>
 </head>
@@ -79,8 +83,7 @@
 <section class="hero wrap">
   <div class="hero-grid">
     <div>
-      <div class="eyebrow">Private testing · iPhone · Apple Watch</div>
-      <h1>Your Kalshi sports bets, in your pocket and on your wrist.</h1>
+      <h1>Tonight's games, in your pocket and on your wrist.</h1>
       <p class="lede">Spex Glance for iPhone is the Mac app's glance, made for a phone: unrealized P&amp;L up top, every game you hold below, live ones first. Tap a live game for the score and your chances. Follow it on the Lock Screen. And it comes with an Apple Watch app.</p>
       <div class="testing">
         <span class="badge">Private testing</span>
@@ -140,8 +143,11 @@
       <p class="muted">Every widget says when its numbers are from. iOS refreshes widgets on its own schedule, so they're never truly live; the app nudges them whenever it has new numbers.</p>
     </div>
     <div>
-      <img class="phone" src="/assets/ios/ios-widgets.jpg" width="660" height="1435" alt="iPhone home screen with two Spex Glance widgets: a medium widget listing two live games with chances and P&amp;L, and a small cobalt widget with unrealized P&amp;L of plus $2.20" loading="lazy">
-      <p class="caption">Medium and small widgets on the home screen.</p>
+      <div class="widgets">
+        <img class="wm" src="/assets/ios/widget-medium.jpg" width="760" height="354" alt="Medium Spex Glance widget: two live games with your side's chance and each game's P&amp;L, then cash, positions and unrealized P&amp;L" loading="lazy">
+        <img class="ws" src="/assets/ios/widget-small.jpg" width="360" height="360" alt="Small Spex Glance widget: unrealized P&amp;L of plus $2.20, 4 games, 2 live" loading="lazy">
+      </div>
+      <p class="caption">The medium and small home-screen widgets.</p>
     </div>
   </div>
 </section>
