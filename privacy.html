@@ -20,7 +20,8 @@ a{color:var(--cobalt)} .back{text-decoration:none;font-family:"Space Grotesk",sy
 <h1>Privacy</h1>
 <p>This covers Spex Glance and the spex.bet site. Short version: Spex Glance runs on your Mac, talks only to Kalshi, and has no server of its own.</p>
 <h2>Your Kalshi API key</h2>
-<p>Stored in your macOS Keychain. Used only to call Kalshi's API from your Mac. It is never sent anywhere else. The app requires a read-only key and cannot place, amend, or cancel orders.</p>
+<p>Stored in your device's Keychain. Used only to call Kalshi's API from your device. The app requires a read-only key and cannot place, amend, or cancel orders.</p>
+<p>Optional, off by default: Settings → Kalshi key → Share puts a copy of the key in your iCloud Keychain, which Apple encrypts end to end, so Spex Glance on your other Apple devices signed in to the same Apple Account can connect without a new key. Only Spex Glance can read that copy. Turning sharing off deletes it. Apart from this, the key is never sent anywhere but Kalshi.</p>
 <h2>Your positions and balances</h2>
 <p>Fetched from Kalshi, shown on screen, held in memory while the app runs. Not logged, not uploaded, not shared.</p>
 <h2>What is collected</h2>
@@ -33,5 +34,5 @@ a{color:var(--cobalt)} .back{text-decoration:none;font-family:"Space Grotesk",sy
 <p>Kalshi (their API, under their terms), GitHub (downloads, update checks, and this site), Ko-fi (only if you click the tip link).</p>
 <h2>Contact</h2>
 <p>Open an issue on <a href="https://github.com/spexbet/spex-glance/issues">GitHub</a>.</p>
-<p><small>Last updated September 2026.</small></p>
+<p><small>Last updated October 2026.</small></p>
 </div></body></html>

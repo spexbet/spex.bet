@@ -50,7 +50,7 @@
     { "@type": "Question", "name": "Is this affiliated with Kalshi?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. Spex Glance is an independent open-source project. It's not affiliated with, endorsed by, or supported by Kalshi. Kalshi is their trademark." } },
     { "@type": "Question", "name": "Where does my key go?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Into your macOS Keychain, on your Mac. The app talks directly to Kalshi's API. There's no Spex server in between." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Into your macOS Keychain, on your Mac. The app talks directly to Kalshi's API. There's no Spex server in between. If you turn on key sharing in Settings (off by default), a copy also goes into your iCloud Keychain so Spex Glance on your other Apple devices can use it." } },
     { "@type": "Question", "name": "Are the numbers real time?",
       "acceptedAnswer": { "@type": "Answer", "text": "As current as Kalshi's ticker sends them. They can lag or be wrong. Confirm on Kalshi before acting on anything." } },
     { "@type": "Question", "name": "Does it collect anything?",
@@ -128,7 +128,7 @@
         <div class="eyebrow">What it's for</div>
         <h2>Keep tabs without keeping a tab open.</h2>
         <p class="muted">Kalshi's portfolio page updates live too. It also needs a browser tab, a login, and the rest of the site around it. This is the same feed in a plain window you can leave open, or a number in the menu bar, without the browser.</p>
-        <p class="muted">Nothing is stored. It streams and displays. No database, no history, no server in between. The one thing kept on your Mac is your API key, in the Keychain.</p>
+        <p class="muted">Nothing is stored. It streams and displays. No database, no history, no server in between. The one thing kept on your Mac is your API key, in the Keychain (and in your iCloud Keychain only if you turn on sharing).</p>
       </div>
       <div>
         <div class="zoom"><img src="/assets/screenshot-detail.png" width="1110" height="504" alt="Close-up of two position cards: cost, price paid, current value, payout, chance, and unrealized P&amp;L per side, with the Kalshi market ticker" loading="lazy"></div>
@@ -215,7 +215,7 @@
     <div class="eyebrow">FAQ</div>
     <h2>Questions people ask before installing a thing that touches their money.</h2>
     <details open><summary>Is this affiliated with Kalshi?</summary><p>No. Spex Glance is an independent open-source project. It's not affiliated with, endorsed by, or supported by Kalshi. "Kalshi" is their trademark.</p></details>
-    <details><summary>Where does my key go?</summary><p>Into your macOS Keychain, on your Mac. The app talks directly to Kalshi's API. There's no Spex server in between.</p></details>
+    <details><summary>Where does my key go?</summary><p>Into your macOS Keychain, on your Mac. The app talks directly to Kalshi's API. There's no Spex server in between. If you turn on key sharing in Settings (off by default), a copy also goes into your iCloud Keychain, end-to-end encrypted by Apple, so Spex Glance on your other Apple devices signed in to the same Apple Account can use it. Turn it off and the copy is deleted.</p></details>
     <details><summary>Are the numbers real time?</summary><p>As current as Kalshi's ticker sends them. They can lag or be wrong. Confirm on Kalshi before acting on anything.</p></details>
     <details><summary>Does it collect anything?</summary><p>Nothing. No analytics, no crash reports, no install counting. The app makes two kinds of network calls: to Kalshi's API for your positions, and to GitHub once a day to check for updates. GitHub sees an IP address and the app version on that check, the same as any app that updates itself. Details in the <a href="/privacy.html">privacy note</a>.</p></details>
     <details><summary>Does Kalshi have a Mac app or desktop app?</summary><p>Not that we know of. Kalshi has a website and iPhone and Android apps. Spex Glance is an independent, read-only Mac app that shows your Kalshi sports positions using Kalshi's public API. It isn't made by Kalshi.</p></details>
