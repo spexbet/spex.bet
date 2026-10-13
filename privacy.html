@@ -18,12 +18,14 @@ a{color:var(--cobalt)} .back{text-decoration:none;font-family:"Space Grotesk",sy
 <body><div class="wrap">
 <a class="back" href="/">← Spex</a>
 <h1>Privacy</h1>
-<p>This covers Spex Glance and the spex.bet site. Short version: Spex Glance runs on your Mac, talks only to Kalshi, and has no server of its own.</p>
+<p>This covers Spex Glance (Mac, and iPhone and Apple Watch in private testing) and the spex.bet site. Short version: Spex Glance runs on your devices, talks only to Kalshi, and has no server of its own.</p>
 <h2>Your Kalshi API key</h2>
 <p>Stored in your device's Keychain. Used only to call Kalshi's API from your device. The app requires a read-only key and cannot place, amend, or cancel orders.</p>
 <p>Optional, off by default, for early testing of Spex Glance for iPhone as an easier setup: Settings → Kalshi key → Share puts a copy of the key in your iCloud Keychain, which Apple encrypts end to end, so Spex Glance on your other Apple devices signed in to the same Apple Account can connect without a new key. Only Spex Glance can read that copy. Turning sharing off deletes it. Apart from this, the key is never sent anywhere but Kalshi.</p>
 <h2>Your positions and balances</h2>
 <p>Fetched from Kalshi, shown on screen, held in memory while the app runs. Not logged, not uploaded, not shared.</p>
+<h2>iPhone and Apple Watch (private testing)</h2>
+<p>The same rules as the Mac. The key stays in your iPhone's Keychain and is used only to call Kalshi's API; key sharing with your Mac works the same way as above. The iPhone sends your Apple Watch the numbers and game lines it shows, over Apple's own connection between the two; the watch holds no key and never talks to Kalshi. While in testing, Apple's TestFlight may collect crash reports and feedback you choose to send; that goes to Apple and the Spex developer account, under Apple's terms.</p>
 <h2>What is collected</h2>
 <p>Nothing. There is no analytics, no crash reporting, no install counting, and no third-party SDK in the app.</p>
 <h2>Network calls the app makes</h2>

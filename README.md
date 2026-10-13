@@ -1,6 +1,6 @@
 # spex.bet
 
-Landing site for the Spex family of Kalshi sports-position tools. `/` is the brand page, `/glance/` is [Spex Glance](https://github.com/spexbet/spex-glance) (macOS). Future apps get their own folder (`/board/`, `/ios/`).
+Landing site for the Spex family of Kalshi sports-position tools. `/` is the brand page, `/glance/` is [Spex Glance](https://github.com/spexbet/spex-glance) (macOS), `/ios/` is Spex Glance for iPhone and Apple Watch (private testing; screenshots in `assets/ios/`). Future apps get their own folder.
 
 Static HTML, no build step, hosted on GitHub Pages at https://spex.bet.
 
