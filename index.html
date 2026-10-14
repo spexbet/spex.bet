@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spex: free tools to track your Kalshi sports bets</title>
-<meta name="description" content="Spex is a family of free, open-source apps for watching your open Kalshi sports positions: a Mac menu bar app now, an iPhone and Apple Watch app in private testing. Read-only, no orders placed. Not affiliated with Kalshi.">
+<title>Spex: see where you stand on your Kalshi sports bets</title>
+<meta name="description" content="Spex Glance is a free, open-source Mac app that puts every open Kalshi sports position on one screen: grouped by game, with the current chance, what it pays, and Won or Lost when it ends. Read-only. Not affiliated with Kalshi.">
 <link rel="canonical" href="https://spex.bet/">
 <link rel="icon" type="image/png" href="/assets/app-icon.png">
 <link rel="apple-touch-icon" href="/assets/app-icon.png">
@@ -12,13 +12,13 @@
 <meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spex">
-<meta property="og:title" content="Spex: free tools to track your Kalshi sports bets">
-<meta property="og:description" content="Free, open-source tools for watching your open Kalshi sports positions. Spex Glance for Mac is out now.">
+<meta property="og:title" content="Spex: see where you stand on your Kalshi sports bets">
+<meta property="og:description" content="Every open Kalshi sports position on one screen, grouped by game. Free, open-source, read-only. Spex Glance for Mac is out now.">
 <meta property="og:url" content="https://spex.bet/">
 <meta property="og:image" content="https://spex.bet/assets/og-spex.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Spex: free tools to track your Kalshi sports bets">
-<meta name="twitter:description" content="Free, open-source tools for watching your open Kalshi sports positions. Spex Glance for Mac is out now.">
+<meta name="twitter:title" content="Spex: see where you stand on your Kalshi sports bets">
+<meta name="twitter:description" content="Every open Kalshi sports position on one screen, grouped by game. Free, open-source, read-only. Spex Glance for Mac is out now.">
 <meta name="twitter:image" content="https://spex.bet/assets/og-spex.png">
 <script type="application/ld+json">
 {
@@ -37,6 +37,8 @@
   "mainEntity": [
     { "@type": "Question", "name": "Is Spex affiliated with Kalshi?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. Spex is an independent open-source project. It isn't affiliated with, endorsed by, or supported by Kalshi. Kalshi is their trademark." } },
+    { "@type": "Question", "name": "Does Spex Glance replace the Kalshi app?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Kalshi is where you place, change and cancel bets. Spex Glance only shows you where your sports positions stand, and its Open Kalshi portfolio button takes you back there when you want to act." } },
     { "@type": "Question", "name": "Does Spex work with Polymarket, FanDuel, DraftKings, or other sportsbooks?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. Every Spex app reads from Kalshi's API and nothing else. Other prediction markets and sportsbooks have their own APIs or none at all, and there's no plan to add them." } },
     { "@type": "Question", "name": "Can any Spex app place a bet for me?",
@@ -48,6 +50,30 @@
 </script>
 <link rel="stylesheet" href="/assets/site.css">
 <style>
+/* Hero: the claim on the left, the window that proves it on the right */
+.hero-home{padding-top:40px;padding-bottom:56px}
+.hero-home h1{font-size:clamp(2.4rem,5.6vw,4rem);max-width:13ch;text-wrap:balance}
+.hero-home .lede{font-size:1.18rem;max-width:44ch}
+.hero-home .shot{width:400px}
+
+/* The gap: two ways to answer "how am I doing tonight?" */
+.gap-head{max-width:62ch;margin-bottom:28px}
+.gap-head h2{max-width:20ch;text-wrap:balance}
+.gap{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media (max-width:860px){.gap{grid-template-columns:1fr}}
+.gap>.card{min-width:0;display:flex;flex-direction:column;gap:14px}
+.gap .who{font-family:var(--display);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}
+.gap .who.then{color:var(--muted)} .gap .who.now{color:var(--cobalt)}
+.gap h3{margin:0;font-size:1.3rem}
+.gap .zoom{max-width:100%;box-shadow:0 18px 40px -24px rgba(11,30,68,.5),0 0 0 1px var(--line)}
+.gap .card.glance{border:2px solid var(--cobalt)}
+.gap ul.dots{margin:0;padding-left:1.25em;display:grid;gap:8px}
+.gap ul.dots li{padding-left:2px}
+.gap ul.dots li::marker{color:var(--cobalt)}
+.gap ul.dots.muted li::marker{color:var(--muted)}
+
+
+/* Apps */
 .apps{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px;max-width:900px}
 @media (max-width:860px){.apps{grid-template-columns:1fr}}
 .app{display:flex;flex-direction:column;gap:10px}
@@ -57,12 +83,9 @@
 .app p{margin:0;flex:1}
 .app .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
 .app img{width:56px;height:56px;border-radius:14px;box-shadow:0 1px 3px rgba(11,30,68,.25)}
-.hero-brand{padding-top:56px;padding-bottom:24px}
 .support h3{margin:0 0 6px}
 .support p{margin:0 0 16px;font-size:.95rem;max-width:70ch}
 .btn.kofi{background:#FF5E5B;color:#fff}
-.hero-brand h1{max-width:14ch}
-.hero-brand h1{font-size:clamp(2.4rem,6vw,4.2rem)}
 </style>
 </head>
 <body>
@@ -78,9 +101,90 @@
   </nav>
 </header>
 <main>
-<section class="wrap hero-brand">
-  <h1>Keep tabs on your Kalshi sports positions.</h1>
-  <p class="lede">Spex is a small set of tools for people who have money on tonight's games and want to see how it's going without living in a browser tab. Read-only, your own API key, no orders placed. Everything here is free and MIT licensed.</p>
+<section class="wrap hero-home">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Spex Glance for Mac</div>
+      <h1>Where you stand on tonight's games, in one window.</h1>
+      <p class="lede">On Kalshi, checking a night of sports bets means paging through open positions for the current odds and tapping into each closed order to see how it ended. Spex Glance puts every open sports position on one screen, grouped by game. Each bet shows its current chance and what it pays, then Won or Lost once the game ends.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://github.com/spexbet/spex-glance/releases/latest">Download for Mac</a>
+        <a class="btn ghost" href="/glance/">See how it works</a>
+      </div>
+      <span class="fineprint"><span data-version>v0.3.5</span> · macOS 15+ · Apple silicon · Free · MIT · Read-only</span>
+    </div>
+    <div>
+      <img class="shot" src="/assets/screenshot-main.png" alt="Spex Glance window showing Cash, Positions and Total tiles, unrealized P&amp;L, sport filters, and open bets grouped by game with cost, value, chance and payout" width="560" height="785">
+      <p class="caption">Eleven games, thirteen markets, one window.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="gap-head">
+      <div class="eyebrow">The gap</div>
+      <h2>Placing a bet on Kalshi is quick. Checking on it isn't.</h2>
+      <p class="muted">Kalshi's portfolio covers every market you trade, sports or not, and puts the outcome of a bet one tap behind its order. That's fine for managing bets. It's slow when all you want to know is whether tonight is going well.</p>
+    </div>
+    <div class="gap">
+      <div class="card">
+        <span class="who then">Checking on Kalshi</span>
+        <h3>Dig, tap, repeat.</h3>
+        <ul class="dots muted">
+          <li>Open your portfolio and scroll for tonight's games among everything else you hold.</li>
+          <li>Dig through your open orders to see where each bet stands right now.</li>
+          <li>Tap into each closed order, one at a time, to find out whether it won.</li>
+          <li>Add it up in your head.</li>
+        </ul>
+      </div>
+      <div class="card glance">
+        <span class="who now">Checking in Spex Glance</span>
+        <h3>Look once.</h3>
+        <ul class="dots">
+          <li>Every open sports position on one screen, grouped by game.</li>
+          <li>Chance, cost and payout on every line, with a live clock once the game starts.</li>
+          <li>Won or Lost on the card when the game ends. Finished bets move to the Settled tab with the day's total.</li>
+          <li>Cash, Positions, Total and unrealized P&amp;L at the top, and a live P&amp;L number in the menu bar.</li>
+        </ul>
+        <div class="zoom"><img src="/assets/screenshot-detail.png" alt="Close-up of two tennis positions in Spex Glance, each showing side, cost, value, payout and chance" width="1110" height="504"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="gap-head">
+      <div class="eyebrow">What it does, and what it doesn't</div>
+      <h2>A scoreboard for your bets. Kalshi does the rest.</h2>
+      <p class="muted">Glance only reads. Anything that changes your account still happens on Kalshi, and the Open Kalshi portfolio button takes you there.</p>
+    </div>
+    <div class="gap">
+      <div class="card glance">
+        <span class="who now">What Glance does</span>
+        <h3>Keeps tabs.</h3>
+        <ul class="dots">
+          <li>Shows your active sports positions: upcoming, live, and final until Kalshi settles them.</li>
+          <li>Groups them by game, with the chance, cost and payout on each bet.</li>
+          <li>Lists finished bets on the Settled tab with Won or Lost and each day's total.</li>
+          <li>Keeps a live P&amp;L number in the menu bar.</li>
+          <li>Counts non-sports positions in your total without listing them.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="who then">What Glance can't do</span>
+        <h3>Head to Kalshi for these.</h3>
+        <ul class="dots muted">
+          <li>Place, change or cancel a bet.</li>
+          <li>Show markets you don't hold. It has no search or browsing.</li>
+          <li>Move money or change account settings.</li>
+          <li>List politics, weather or other non-sports positions.</li>
+          <li>Create its own API key. That's a one-time step on kalshi.com.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="apps" class="alt">
@@ -97,7 +201,7 @@
           <a class="btn primary" href="/glance/">Learn more</a>
           <a class="btn ghost" href="https://github.com/spexbet/spex-glance/releases/latest">Download</a>
         </div>
-        <span class="fineprint"><span data-version>v0.2.1</span> · macOS 15+ · Apple silicon · Free · MIT</span>
+        <span class="fineprint"><span data-version>v0.3.5</span> · macOS 15+ · Apple silicon · Free · MIT</span>
       </div>
       <div class="card app">
         <img src="/assets/app-icon.png" alt="" width="56" height="56">
@@ -126,6 +230,7 @@
   <div class="wrap">
     <div class="eyebrow">Common questions</div>
     <details open><summary>Is Spex affiliated with Kalshi?</summary><p>No. Spex is an independent open-source project. It isn't affiliated with, endorsed by, or supported by Kalshi. "Kalshi" is their trademark.</p></details>
+    <details><summary>Does Spex Glance replace the Kalshi app?</summary><p>No. Kalshi is where you place, change and cancel bets. Spex Glance only shows you where your sports positions stand, and its Open Kalshi portfolio button takes you back there when you want to act.</p></details>
     <details><summary>Does Spex work with Polymarket, FanDuel, DraftKings, or other sportsbooks?</summary><p>No. Every Spex app reads from Kalshi's API and nothing else. Other prediction markets and sportsbooks have their own APIs or none at all, and there's no plan to add them.</p></details>
     <details><summary>Can any Spex app place a bet for me?</summary><p>No. They run on read-only Kalshi API keys and have no order code. They show you what you hold and what it's worth.</p></details>
     <details><summary>Why is it called Spex?</summary><p>A haruspex was a Roman priest who predicted the future by reading the entrails of a sacrificed animal. That's roughly what checking your Kalshi portfolio at 11pm feels like. Spex is the tail end of that word, and also specs, as in the glasses in the logo. Less mess, same anxiety.</p></details>
