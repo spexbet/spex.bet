@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spex Glance for iPhone and Apple Watch (private testing)</title>
-<meta name="description" content="Spex Glance for iPhone and Apple Watch, in private testing: your open Kalshi sports bets, live games you can follow on the Lock Screen, home and Lock Screen widgets, and watch-face complications. Read-only, free, open source. Not affiliated with Kalshi.">
+<meta name="description" content="Spex Glance for iPhone and Apple Watch, in private testing: your open Kalshi sports positions, live games you can follow on the Lock Screen, home and Lock Screen widgets, and watch-face complications. Read-only, free, open source. Not affiliated with Kalshi.">
 <link rel="canonical" href="https://spex.bet/ios/">
 <link rel="icon" type="image/png" href="/assets/app-icon.png">
 <link rel="apple-touch-icon" href="/assets/app-icon.png">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spex">
 <meta property="og:title" content="Spex Glance for iPhone and Apple Watch (private testing)">
-<meta property="og:description" content="Your open Kalshi sports bets on your iPhone and your wrist. In private testing.">
+<meta property="og:description" content="Your open Kalshi sports positions on your iPhone and your wrist. In private testing.">
 <meta property="og:url" content="https://spex.bet/ios/">
 <meta property="og:image" content="https://spex.bet/assets/og-spex.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +28,7 @@
       "acceptedAnswer": { "@type": "Answer", "text": "No. The iPhone app connects to Kalshi on its own with a read-only API key. If you already use Spex Glance on a Mac, you can turn on key sharing there so the iPhone connects without making a second key. It's optional and off by default." } },
     { "@type": "Question", "name": "Does the watch need my Kalshi key?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. The watch never talks to Kalshi and holds no key. Your iPhone sends it the numbers and game lines it shows." } },
-    { "@type": "Question", "name": "Can it place a bet?",
+    { "@type": "Question", "name": "Can it place an order?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. Like every Spex app it runs on a read-only Kalshi key and has no order code. It won't accept a key that could trade." } }
   ]
 }
@@ -53,7 +53,7 @@
 .hero .phone{max-width:320px}
 .strip{display:block;width:100%;max-width:420px;margin:0 auto;border-radius:16px;box-shadow:0 20px 40px -20px rgba(11,30,68,.5),0 0 0 1px var(--line)}
 .stack{display:flex;flex-direction:column;gap:18px;align-items:center}
-.watches{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:26px}
+.watches{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:26px;max-width:560px}
 @media (max-width:860px){.watches{grid-template-columns:repeat(2,1fr)}}
 .watch{display:block;width:100%;max-width:208px;margin:0 auto;border-radius:44px;background:#000;box-shadow:0 0 0 8px #1b1b1f,0 0 0 9px var(--line),0 30px 60px -25px rgba(11,30,68,.6)}
 .watches figure{margin:0}
@@ -90,7 +90,7 @@
         <span class="badge">Private testing</span>
         <p><strong>Not available yet.</strong> It's in private testing through Apple's TestFlight, invite-only. It isn't on the App Store and there's no public sign-up yet. Check back here.</p>
       </div>
-      <p class="fineprint">iOS 18 or newer · watchOS 11 or newer · Free · Open source (MIT) · Read-only · Not affiliated with Kalshi</p>
+      <p class="fineprint">iOS 18 or newer · watchOS 11 or newer · Free · Open source (MIT) · Read-only · Not affiliated with or endorsed by Kalshi</p>
     </div>
     <div>
       <img class="phone" src="/assets/ios/ios-main.jpg" width="660" height="1435" alt="Spex Glance on iPhone: a cobalt card with unrealized P&amp;L, cash, positions and total, sport filters, and live games with scores and each position's chance" loading="eager" fetchpriority="high">
@@ -104,7 +104,7 @@
     <div>
       <div class="eyebrow">Live games</div>
       <h2>Tap a live game. Watch it from there.</h2>
-      <p class="muted">A collapsed card is one line per bet: what you hold and its chance, green when it's worth more than you paid. Open a live game and you get the scoreboard straight from Kalshi's live feed: score, period or inning, who has the ball or the serve, runners and count, the last play. Under it, each position's value, payout and cost.</p>
+      <p class="muted">A collapsed card is one line per position: what you hold and its chance, green when it's worth more than you paid. Open a live game and you get the scoreboard straight from Kalshi's live feed: score, period or inning, who has the ball or the serve, runners and count, the last play. Under it, each position's value, payout and cost.</p>
       <ul class="ul muted">
         <li>Prices stream live while the app is open; scores refresh every 15 seconds.</li>
         <li>Games sorted into Live now, Upcoming, and Final awaiting settlement.</li>
@@ -113,8 +113,8 @@
       </ul>
     </div>
     <div>
-      <img class="phone" src="/assets/ios/ios-game.jpg" width="660" height="1435" alt="An open live baseball game: LAD 5, SF 2 in the bottom of the 7th, runners on first and third, the last play, and two positions with their chances, values and payouts" loading="lazy">
-      <p class="caption">Dodgers–Giants, bottom of the 7th. Score, situation, and both bets.</p>
+      <img class="phone" src="/assets/ios/ios-game.jpg" width="660" height="1435" alt="An open live baseball game (demo data): Redwood Owls 5, Sandport Gulls 2 in the bottom of the 7th, runners on first and third, the last play, and two positions with their chances, values and payouts" loading="lazy">
+      <p class="caption">Bottom of the 7th. Score, situation, and both positions. Demo data.</p>
     </div>
   </div>
 </section>
@@ -122,9 +122,8 @@
 <section>
   <div class="wrap split">
     <div class="stack">
-      <img class="strip" src="/assets/ios/ios-lock-activity.jpg" width="660" height="350" alt="A followed game on the iPhone Lock Screen: Dodgers vs Giants, 5 to 2, live in the bottom of the 7th, your side at 71 percent and up $3.90" loading="lazy">
       <img class="strip" src="/assets/ios/ios-island.jpg" width="660" height="115" alt="The same game in the Dynamic Island: 5–2 on the left, 71 percent on the right" loading="lazy">
-      <p class="caption">On the Lock Screen and in the Dynamic Island.</p>
+      <p class="caption">A followed game in the Dynamic Island.</p>
     </div>
     <div>
       <div class="eyebrow">Follow on Lock Screen</div>
@@ -139,16 +138,15 @@
   <div class="wrap split">
     <div>
       <div class="eyebrow">Widgets</div>
-      <h2>Your bets on the home screen and the Lock Screen.</h2>
+      <h2>Your positions on the home screen and the Lock Screen.</h2>
       <p class="muted">The Mac's widgets, on your iPhone: a cobalt tile with unrealized P&amp;L, games held and how many are live; a list of your top games with chances and P&amp;L; and a large size with your balances and resting orders. On the Lock Screen: P&amp;L in a line, in a circle, or your top game with its score.</p>
       <p class="muted">Every widget says when its numbers are from. iOS refreshes widgets on its own schedule, so they're never truly live; the app nudges them whenever it has new numbers.</p>
     </div>
     <div>
       <div class="widgets">
-        <img class="wm" src="/assets/ios/widget-medium.jpg" width="760" height="354" alt="Medium Spex Glance widget: two live games with your side's chance and each game's P&amp;L, then cash, positions and unrealized P&amp;L" loading="lazy">
         <img class="ws" src="/assets/ios/widget-small.jpg" width="360" height="360" alt="Small Spex Glance widget: unrealized P&amp;L of plus $2.20, 4 games, 2 live" loading="lazy">
       </div>
-      <p class="caption">The medium and small home-screen widgets.</p>
+      <p class="caption">The small home-screen widget.</p>
     </div>
   </div>
 </section>
@@ -160,8 +158,6 @@
     <p class="muted" style="max-width:68ch">Spex Glance comes with an Apple Watch app and watch-face complications. The watch holds no Kalshi key and never talks to Kalshi: your iPhone sends it the numbers. Pick a complication when you edit your watch face: <em>Unrealized P&amp;L</em>, <em>Top game</em> (score and your chance), or <em>Balances</em>. Dollar amounts hide while the watch is locked, and one switch keeps them off entirely.</p>
     <div class="watches">
       <figure><img class="watch" src="/assets/ios/watch-home.png" width="416" height="496" alt="Apple Watch: Spex Glance's cobalt card with unrealized P&amp;L, two live games, cash, positions and total" loading="lazy"><figcaption>Your P&amp;L and balances.</figcaption></figure>
-      <figure><img class="watch" src="/assets/ios/watch-games.png" width="416" height="496" alt="Apple Watch: a live game card, Dodgers vs Giants 5 to 2 in the bottom of the 7th at 71 percent, then upcoming games" loading="lazy"><figcaption>Live games first, then what's next.</figcaption></figure>
-      <figure><img class="watch" src="/assets/ios/watch-game.png" width="416" height="496" alt="Apple Watch: one game's scoreboard, LAD 5 SF 2, with each position's chance" loading="lazy"><figcaption>Tap a game for its score and chances.</figcaption></figure>
       <figure><img class="watch" src="/assets/ios/watch-stack.png" width="416" height="496" alt="Apple Watch Smart Stack with the Unrealized P&amp;L widget: up $2.20, 2 live, 4 open" loading="lazy"><figcaption>A complication in the Smart Stack.</figcaption></figure>
     </div>
   </div>
@@ -184,7 +180,7 @@
     <details open><summary>Can I download it?</summary><p>Not yet. Spex Glance for iPhone and Apple Watch is in private testing through Apple's TestFlight, invite-only. It isn't on the App Store and there's no public sign-up yet. Check back here.</p></details>
     <details><summary>Do I need the Mac app?</summary><p>No. The iPhone app connects to Kalshi on its own with a read-only API key. If you already use <a href="/glance/">Spex Glance on a Mac</a>, you can turn on key sharing there (Settings, Kalshi key) so the iPhone connects without making a second key. It's optional and off by default; the copy travels in your iCloud Keychain, which Apple encrypts end to end.</p></details>
     <details><summary>Does the watch need my Kalshi key?</summary><p>No. The watch never talks to Kalshi and holds no key. Your iPhone sends it the numbers and game lines it shows. The watch's complications are as fresh as the iPhone's last update and say when they're from.</p></details>
-    <details><summary>Can it place a bet?</summary><p>No. Like every Spex app it runs on a read-only Kalshi key and has no order code. It won't accept a key that could trade.</p></details>
+    <details><summary>Can it place an order?</summary><p>No. Like every Spex app it runs on a read-only Kalshi key and has no order code. It won't accept a key that could trade.</p></details>
     <details><summary>Is it open source?</summary><p>Yes. The iPhone and watch apps live in the same <a href="https://github.com/spexbet/spex-glance">spex-glance repository</a> as the Mac app, MIT licensed.</p></details>
   </div>
 </section>
@@ -194,7 +190,7 @@
   <div class="wrap">
     <div class="disclaimer">
       <strong>Disclaimer.</strong> Spex is not affiliated with or endorsed by Kalshi. It's informational only. Nothing here is trading advice. Prices and settlements are relayed from Kalshi as-is and can lag or be wrong. Confirm on Kalshi before acting. Provided under the MIT license, as-is, without warranty of any kind.
-      <div style="margin-top:8px">If gambling is a problem for you or someone you know, call or text <span class="help">1-800-GAMBLER</span>.</div>
+      <div style="margin-top:8px">If gambling is a problem for you or someone you know, call <span class="help">1-800-MY-RESET</span> (1-800-697-3738) or visit <a href="https://www.1800myreset.org">1800myreset.org</a>.</div>
     </div>
     <div class="cols">
       <div>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spex Glance: Kalshi positions app for Mac (free, open source)</title>
-<meta name="description" content="A free, open-source Mac app for tracking your open Kalshi sports bets: live prices, P&amp;L in the menu bar, positions grouped by game. Read-only, your own Kalshi API key, no orders placed. Not affiliated with Kalshi.">
+<meta name="description" content="A free, open-source Mac app for tracking your open Kalshi sports positions: live prices, P&amp;L in the menu bar, positions grouped by game. Read-only, your own Kalshi API key, no orders placed. Not affiliated with Kalshi.">
 <link rel="canonical" href="https://spex.bet/glance/">
 <link rel="icon" type="image/png" href="/assets/app-icon.png">
 <link rel="apple-touch-icon" href="/assets/app-icon.png">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spex Glance">
 <meta property="og:title" content="Spex Glance: Kalshi positions app for Mac">
-<meta property="og:description" content="Free macOS app. Active Kalshi sports positions in one window and the menu bar. Read-only, open source, not affiliated with Kalshi.">
+<meta property="og:description" content="Free macOS app. Active Kalshi sports positions in one window and the menu bar. Read-only, open source, not affiliated with or endorsed by Kalshi.">
 <meta property="og:url" content="https://spex.bet/glance/">
 <meta property="og:image" content="https://spex.bet/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -54,9 +54,9 @@
     { "@type": "Question", "name": "Are the numbers real time?",
       "acceptedAnswer": { "@type": "Answer", "text": "As current as Kalshi's ticker sends them. They can lag or be wrong. Confirm on Kalshi before acting on anything." } },
     { "@type": "Question", "name": "Does it collect anything?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nothing. No analytics, no crash reports, no install counting. The app makes two kinds of network calls: to Kalshi's API for your positions, and to GitHub once a day to check for updates. GitHub sees an IP address and the app version on that check, the same as any app that updates itself." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Nothing. No analytics, no crash reports, no install counting. The app makes network calls to Kalshi's API for your positions, to GitHub once a day to check for updates, and to your own iCloud only if you turn on Live Line sync or key sharing. GitHub sees an IP address and the app version on that check, the same as any app that updates itself." } },
     { "@type": "Question", "name": "Does Kalshi have a Mac app or desktop app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Not that we know of. Kalshi has a website and iPhone and Android apps. Spex Glance is an independent, read-only Mac app that shows your Kalshi sports positions using Kalshi's public API. It isn't made by Kalshi." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Kalshi's iPhone app runs on Apple silicon Macs. Spex Glance is a separate, independent, read-only Mac app that shows only your Kalshi sports positions, in a window and the menu bar, using Kalshi's public API. It isn't made by Kalshi." } },
     { "@type": "Question", "name": "Does it work with Polymarket, FanDuel, DraftKings, or other sportsbooks?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. Kalshi only. Spex Glance reads positions through Kalshi's API, and the other platforms have different APIs, different account models, and in the sportsbooks' case no public read API at all." } },
     { "@type": "Question", "name": "Is there an iPhone version?",
@@ -102,7 +102,7 @@
   <div class="hero-grid">
     <div>
       <h1>Tonight's games. What you've got riding on them.</h1>
-      <p class="lede">A small Mac app that lists your open Kalshi sports bets by game: the score, what you paid, what each side is worth right now, and what it pays if it hits. One window, or one number in the menu bar.</p>
+      <p class="lede">A small Mac app that lists your open Kalshi sports positions by game: the score, what you paid, what each side is worth right now, and what it pays if it hits. One window, or one number in the menu bar.</p>
       <div class="cta-row">
         <a class="btn primary" href="https://github.com/spexbet/spex-glance/releases/latest">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -110,11 +110,11 @@
         </a>
         <a class="btn ghost" href="https://github.com/spexbet/spex-glance">Source on GitHub</a>
       </div>
-      <p class="fineprint"><a href="https://github.com/spexbet/spex-glance/releases/latest"><span data-version>v0.2.1</span></a> · macOS 15 or newer · Apple silicon only · MIT license · Not affiliated with Kalshi</p>
+      <p class="fineprint"><a href="https://github.com/spexbet/spex-glance/releases/latest"><span data-version>v0.3.6</span></a> · macOS 15 or newer · Apple silicon only · MIT license · Not affiliated with or endorsed by Kalshi</p>
     </div>
     <div>
-      <img class="shot" src="/assets/screenshot-main.png" width="1120" height="1570" alt="Spex Glance main window: Cash, Positions and Total tiles, unrealized P&amp;L, Live and Kalshi Health indicators, sport filters, and open positions grouped by game with value, payout and chance" loading="eager" fetchpriority="high">
-      <p class="caption">The whole window. Tennis and hockey, an hour before first pitch.</p>
+      <img class="shot" src="/assets/screenshot-main.png" width="1120" height="1998" alt="Spex Glance main window (demo data): Cash, Positions and Total tiles, unrealized P&amp;L, the Connection indicator, sport filters, and open positions grouped by game with value, payout and chance" loading="eager" fetchpriority="high">
+      <p class="caption">The whole window, with three games live and three to come. Demo data.</p>
     </div>
   </div>
 </section>
@@ -126,10 +126,10 @@
         <div class="eyebrow">What it's for</div>
         <h2>Keep tabs without keeping a tab open.</h2>
         <p class="muted">Kalshi's portfolio page updates live too. It also needs a browser tab, a login, and the rest of the site around it. This is the same feed in a plain window you can leave open, or a number in the menu bar, without the browser.</p>
-        <p class="muted">Nothing is stored. It streams and displays. No database, no history, no server in between. The one thing kept on your Mac is your API key, in the Keychain (and in your iCloud Keychain only if you turn on sharing).</p>
+        <p class="muted">No Spex server, ever. The app keeps a cache of your latest numbers on your Mac so it opens instantly, and Disconnect clears it. Live Line, off by default, keeps your P&amp;L history encrypted on your Mac or in your own iCloud. Your API key stays in the Keychain (and in your iCloud Keychain only if you turn on sharing).</p>
       </div>
       <div>
-        <div class="zoom"><img src="/assets/screenshot-detail.png" width="1110" height="504" alt="Close-up of two position cards: cost, price paid, current value, payout, chance, and unrealized P&amp;L per side, with the Kalshi market ticker" loading="lazy"></div>
+        <div class="zoom"><img src="/assets/screenshot-detail.png" width="1110" height="470" alt="Close-up of a live game (demo data): scoreboard, then the position's cost, price paid, current value, payout, chance and unrealized P&amp;L" loading="lazy"></div>
         <p class="caption">Up close. Cost, what it's worth now, what it pays, chance, and the running P&amp;L on each side.</p>
       </div>
     </div>
@@ -142,11 +142,11 @@
     <h2>What it does, and not much else.</h2>
     <div class="ledger">
       <div><h3><span class="k">01</span>Live from your own Kalshi account</h3><p>Your own read-only API key, straight to Kalshi. One connection carries prices, fills, orders and results, so a change on Kalshi shows up in the window within a second or two. A five-minute refresh runs behind it as a safety net, and the live dot goes amber if the feed falls behind.</p></div>
-      <div><h3><span class="k">02</span>Kalshi health, in the menu bar</h3><p>When Kalshi is having a bad day, the icon turns ember for degraded, red for down, gray for maintenance, with the reason and how long it's been going in the dropdown. Read from Kalshi's own status endpoint, so you stop wondering whether it's the app, your network, or them.</p></div>
+      <div><h3><span class="k">02</span>Connection, in the menu bar</h3><p>If the app can't get your numbers, the icon turns ember or red and the dropdown says why: your network, your VPN, your key, or requests failing. The numbers on screen stay put, marked stale. Spex Glance doesn't check Kalshi's service status; Kalshi's Developer Agreement doesn't allow apps to monitor it.</p></div>
       <div><h3><span class="k">03</span>Work Mode</h3><p><kbd>⇧⌘M</kbd> hides the icon, the dollar sign, the money tiles and the buttons. What's left on screen is a list of games. Sharing your display stops being a disclosure.</p></div>
       <div><h3><span class="k">04</span>Filter by sport, sort by match time</h3><p>Baseball, hockey, tennis, and whatever else Kalshi tags as sports. One click to see only tonight's slate. Sort by Live first, earliest match, or latest, so what's on now sits at the top and tomorrow's early tennis waits its turn.</p></div>
-      <div><h3><span class="k">05</span>Combos, leg by leg</h3><p>A multi-market combo shows as one card with every leg listed by sport and game, each leg's chance, and a check or cross as they settle. No mental math about which parlay is still alive.</p></div>
-      <div><h3><span class="k">06</span>Read-only. Always.</h3><p>It runs on a read-only Kalshi key and has no order code. It can't place, change or cancel a bet, and it won't accept a key that could.</p></div>
+      <div><h3><span class="k">05</span>Combos, leg by leg</h3><p>A multi-market combo shows as one card with every leg listed by sport and game, each leg's chance, and a check or cross as they settle. No mental math about which combo is still alive.</p></div>
+      <div><h3><span class="k">06</span>Read-only. Always.</h3><p>It runs on a read-only Kalshi key and has no order code. It can't place, change or cancel an order, and it won't accept a key that could.</p></div>
     </div>
   </div>
 </section>
@@ -156,12 +156,12 @@
     <div class="split">
       <div>
         <div class="eyebrow">What it isn't</div>
-        <h2>It can't place a bet. That's the point.</h2>
+        <h2>It can't place an order. That's the point.</h2>
         <p class="muted">Sports positions only. Anything else you hold is counted in the totals, not listed. It relays Kalshi's numbers and has no opinion about them.</p>
-        <p class="muted">Free, open source, MIT. Source on GitHub, tips on Ko-fi, no account, no analytics, no crash reports, no install counting.</p>
+        <p class="muted">Free, open source, MIT. Source on GitHub, optional donations on Ko-fi, no account, no analytics, no crash reports, no install counting.</p>
       </div>
       <div>
-        <img class="shot" src="/assets/screenshot-menubar.png" width="748" height="426" alt="Spex Glance menu bar item showing unrealized P&amp;L, with the dropdown listing every open position, chance, and P&amp;L per side" loading="lazy" style="max-width:100%;width:440px;border-radius:14px 14px 0 0">
+        <img class="shot" src="/assets/screenshot-menubar.png" width="800" height="452" alt="Spex Glance menu bar item showing unrealized P&amp;L, with the dropdown listing every open position, chance, and P&amp;L per side (demo data)" loading="lazy" style="max-width:100%;width:440px;border-radius:14px 14px 0 0">
         <p class="caption">The menu bar item and the top of its dropdown. Same data, no window.</p>
       </div>
     </div>
@@ -191,8 +191,8 @@
     <details open><summary>Is this affiliated with Kalshi?</summary><p>No. Spex Glance is an independent open-source project. It's not affiliated with, endorsed by, or supported by Kalshi. "Kalshi" is their trademark.</p></details>
     <details><summary>Where does my key go?</summary><p>Into your macOS Keychain, on your Mac. The app talks directly to Kalshi's API. There's no Spex server in between. If you turn on key sharing in Settings (off by default; it's for early testing of the iPhone app, as an easier setup), a copy also goes into your iCloud Keychain, end-to-end encrypted by Apple, so Spex Glance on your other Apple devices signed in to the same Apple Account can use it. Turn it off and the copy is deleted.</p></details>
     <details><summary>Are the numbers real time?</summary><p>As current as Kalshi's ticker sends them. They can lag or be wrong. Confirm on Kalshi before acting on anything.</p></details>
-    <details><summary>Does it collect anything?</summary><p>Nothing. No analytics, no crash reports, no install counting. The app makes two kinds of network calls: to Kalshi's API for your positions, and to GitHub once a day to check for updates. GitHub sees an IP address and the app version on that check, the same as any app that updates itself. Details in the <a href="/privacy.html">privacy note</a>.</p></details>
-    <details><summary>Does Kalshi have a Mac app or desktop app?</summary><p>Not that we know of. Kalshi has a website and iPhone and Android apps. Spex Glance is an independent, read-only Mac app that shows your Kalshi sports positions using Kalshi's public API. It isn't made by Kalshi.</p></details>
+    <details><summary>Does it collect anything?</summary><p>Nothing. No analytics, no crash reports, no install counting. The app makes network calls to Kalshi's API for your positions, to GitHub once a day to check for updates, and to your own iCloud only if you turn on Live Line sync or key sharing. GitHub sees an IP address and the app version on that check, the same as any app that updates itself. Details in the <a href="/privacy.html">privacy note</a>.</p></details>
+    <details><summary>Does Kalshi have a Mac app or desktop app?</summary><p>Kalshi's iPhone app runs on Apple silicon Macs. Spex Glance is a separate, independent, read-only Mac app that shows only your Kalshi sports positions, in a window and the menu bar, using Kalshi's public API. It isn't made by Kalshi.</p></details>
     <details><summary>Does it work with Polymarket, FanDuel, DraftKings, or other sportsbooks?</summary><p>No. Kalshi only. Spex Glance reads positions through Kalshi's API, and the other platforms have different APIs, different account models, and in the sportsbooks' case no public read API at all. Nothing planned there.</p></details>
     <details><summary>Is there an iPhone version?</summary><p>Yes, in private testing: <a href="/ios/">Spex Glance for iPhone</a>, with an Apple Watch app and widgets. It's invite-only on TestFlight for now and not on the App Store yet.</p></details>
     <details><summary>Can I get the intimate details of the inner workings of this?</summary><p>Yes. All of it is on <a href="https://github.com/spexbet/spex-glance">GitHub</a>: the Swift source, the build scripts, the release process, and the README that explains how the app talks to Kalshi. MIT licensed, so you can read it, build it yourself, or fork it.</p></details>
@@ -205,10 +205,10 @@
     <h2 style="margin:0 auto .5em;max-width:none">Close the tab. Keep the window.</h2>
     <div class="cta-row" style="justify-content:center">
       <a class="btn primary" href="https://github.com/spexbet/spex-glance/releases/latest">Download for Mac</a>
-      <a class="btn ghost" href="https://ko-fi.com/U4B527UPTU">Tip on Ko-fi</a>
+      <a class="btn ghost" href="https://ko-fi.com/U4B527UPTU">Donate on Ko-fi</a>
     </div>
     <div class="brew"><span class="tag">Homebrew</span><code>brew install --cask spexbet/tap/spex-glance</code><button type="button" onclick="navigator.clipboard.writeText('brew install --cask spexbet/tap/spex-glance').then(()=>{this.textContent='Copied';setTimeout(()=>this.textContent='Copy',1500)})">Copy</button></div>
-    <p class="fineprint">Free. Current release <a href="https://github.com/spexbet/spex-glance/releases/latest"><span data-version>v0.2.1</span></a>. If you hit a bug, <a href="https://github.com/spexbet/spex-glance/issues">open an issue</a>.</p>
+    <p class="fineprint">Free. Current release <a href="https://github.com/spexbet/spex-glance/releases/latest"><span data-version>v0.3.6</span></a>. If you hit a bug, <a href="https://github.com/spexbet/spex-glance/issues">open an issue</a>.</p>
   </div>
 </section>
 </main>
@@ -217,7 +217,7 @@
   <div class="wrap">
     <div class="disclaimer">
       <strong>Disclaimer.</strong> Spex Glance is not affiliated with or endorsed by Kalshi. It's informational only. Nothing here is trading advice. Prices and settlements are relayed from Kalshi as-is and can lag or be wrong. Confirm on Kalshi before acting. Provided under the MIT license, as-is, without warranty of any kind.
-      <div style="margin-top:8px">If gambling is a problem for you or someone you know, call or text <span class="help">1-800-GAMBLER</span>.</div>
+      <div style="margin-top:8px">If gambling is a problem for you or someone you know, call <span class="help">1-800-MY-RESET</span> (1-800-697-3738) or visit <a href="https://www.1800myreset.org">1800myreset.org</a>.</div>
     </div>
     <div class="cols">
       <div>
