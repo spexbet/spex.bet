@@ -1,6 +1,6 @@
 # Spex site
 
-Static site on GitHub Pages. **Paused as of 2026-10-15**: development and distribution are on hold.
+Static site on GitHub Pages at https://spex.lol. **Paused as of 2026-10-15**: development and distribution are on hold.
 
 What is live:
 
